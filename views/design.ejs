@@ -1,0 +1,40 @@
+<%-include("partials/header")%>
+
+
+<div class="ui container">
+    <div class="ui green ribbon label">
+        <h2>Design</h2>
+        </div>
+        <div class="ui divided items">
+       
+            <% orders.forEach(function(order){ %>
+                <div id ="segmo" class="ui raised segment"style="border:1pt solid grey;">
+                    <a id="bom" class="ui right floated grey basic  button" href="/design/<%=order._id%>/bom"><i class="cloud upload icon"></i> ADD Material Indent </a>
+            <div class="item">
+                  <h3><%=order.title.toUpperCase()%></h3>
+                  
+            </div>
+          
+            <div class="ui divider"></div>
+            <div class="meta">
+                <span><strong> Date :</strong><%=order.created.toDateString()%></span></div>
+                <div class="meta">    
+                <span><strong> Due Date :</strong><%=order.dueDate.toDateString()%></span>
+            </div>
+            <div class="ui bottom right attached label"><strong>Order ID :</strong><%=order._id%></div>
+     </div>
+     <%}); %>
+        </div>
+
+    </div>
+
+
+</div>
+
+<script>
+
+
+
+</script>
+
+<%-include("partials/footer")%>

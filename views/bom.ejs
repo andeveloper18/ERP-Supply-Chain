@@ -1,0 +1,147 @@
+<%-include("partials/header")%>
+
+<div  class="ui main  container segment grey" style="width: fit-content;" >
+    <div class="ui huge header">BOM FORM</div>
+    <form action="/design/<%=oldOrder._id %>?_method=PUT" method="POST" class="ui form">
+        <div class="field">
+            <label>Title</label>
+                 <input type="text" name="Order[title]" value="<%=oldOrder.title%>" placeholder="" readonly=""></div>
+                 <div class="fields">
+                 <div class=" four wide field">
+                    <label>Capacity</label>
+                         <input type="number" name="Order[capacity]" value="<%=oldOrder.capacity%>" placeholder="" readonly="" ></div>
+                         <div class=" two four field">
+                         <label>Units</label>
+                         <input type="number" name="Order[units]" value="<%=oldOrder.units%>" placeholder="" readonly=""></div>
+                           </div>
+                        <div class="field">
+                            <label>Material of Construction</label>
+                                 <input type="text" name="Order[moc]" value="<%=oldOrder.moc%>" placeholder="" readonly="">
+                                </div>
+                        
+                                <div class="field">
+                                    <label>Remarks</label>
+                                         <input type="text" name="Order[remarks]" value="<%=oldOrder.remarks%>" placeholder="" readonly="">
+                                        </div>
+                                        <div class="divider"></div>
+                                        <div class="ui container">
+                                            <div class="ui segment">
+                        <table class="ui celled structured table">
+                                            <thead>
+                                              <tr>
+                                                <th rowspan="2">Components</th>
+                                                <th rowspan="2" >Material Required</th>
+                                                <th rowspan="2" >Quantity</th>
+                                                <th colspan="5" class="center aligned">Size</th>
+                                              </tr>
+                                              <tr>
+                                              <th>Lenght</th>
+                                              <th>Thick</th>
+                                              <th>Width</th>
+                                              <th>Diameter</th>
+                                              <th>Weight</th></th>
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                              <tr>
+                                                <td>Mainframe :</td>
+                                                <td><input type="text" name="Order[mainframe][material]" placeholder="Material" required></td>
+                                                <td><input type="number" name="Order[mainframe][quantity]" placeholder="QTY." required></td>
+                                               <td>NILL</td>
+                                               <td><input type="number" name="Order[mainframe][thickness]" placeholder="Thick" required></td>
+                                                <td><input type="number" name="Order[mainframe][width]" placeholder="Width" required></td>
+                                                <td>NILL</td>
+                                                <td>NILL</td>
+                                            
+                                              </tr>
+                                              <tr>
+                                                <td>housing :</td>
+                                                <td><input type="text" name="Order[housing][material]" placeholder="Material" required></td>
+                                                <td><input type="number" name="Order[housing][quantity]" placeholder="QTY." required></td>
+                                                <td>NILL</td>
+                                                <td><input type="number" name="Order[housing][thickness]" placeholder="Thick" required></td>
+                                                <td><input type="number" name="Order[housing][width]" placeholder="Width" required></td>
+                                              <td>NILL</td>
+                                               <td><input type="number" name="Order[housing][weight]" placeholder="KG" required></td>
+                                               
+                                    
+                                            
+                                              </tr>
+                                              <tr>
+                                                <td>Shaft :</td>
+                                                <td><input type="text" name="Order[shaft][material]" placeholder="Material" required></td>
+                                                <td><input type="number" name="Order[shaft][quantity]" placeholder="QTY." required></td>
+                                                <td>NILL</td>
+                                                <td>NILL</td>
+                                                <td>NILL</td>
+                                                <td> <input type="number" name="Order[shaft][diameter]" placeholder="diameter" required></td>
+                                                <td>NILL</td>
+                                              </tr>
+                                              <tr>
+                                                <td>Blade :</td>
+                                                <td><input type="text" name="Order[blade][material]" placeholder="Material" required></td>
+                                                <td><input type="number" name="Order[blade][quantity]" placeholder="QTY." required></td>
+                                                <td>NILL</td>
+                                                <td><input type="number" name="Order[blade][thickness]" placeholder="Thick" required></td>
+                                                <td><input type="number" name="Order[blade][width]" placeholder="Width" required>
+                                                <td>NILL</td>
+                                                <td>NILL</td>
+                                              </tr>
+                                              <tr>
+                                                <td>Fastners :</td>
+                                                <td><input type="text" name="Order[fastners][title]" placeholder="type" required></td>
+                                                <td><input type="number" name="Order[fastners][quantity]" placeholder="QTY." required></td>
+                                                <td>NILL</td>
+                                                <td><input type="number" name="Order[fastners][thickness]" placeholder="Thick" required></td>
+                                                <td><input type="number" name="Order[fastners][width]" placeholder="Thick" required></td>
+                                     
+                                                <td>NILL</td>
+                                                <td>NILL</td>
+                                              </tr>
+                                              <tr>
+                                                <td>Feed Pipe :</td>
+                                                <td><input type="text" name="Order[feedpipe][material]" placeholder="Material" required></td>
+                                                <td><input type="number" name="Order[feedpipe][quantity]" placeholder="QTY." required></td>
+                                                <td><input type="number" name="Order[feedpipe][length]" placeholder="lenght" required></td>
+                                                <td>NILL</td>
+                                                <td>NILL</td>
+                                                <td><input type="number" name="Order[feedpipe][diameter]" placeholder="diameter" required></td>
+                                                <td>NILL</td>
+                                                
+                                                
+                                            
+                                              </tr>
+                                              <tr>
+                                                <td>Motor :</td>
+                                                <td><input type="number" name="Order[motor][power]" placeholder="POWER" required></td>
+                                                <td><input type="number" name="Order[motor][quantity]" placeholder="QTY." required></td>
+                                                <td>NILL</td>
+                                                <td>NILL</td>
+                                                <td>NILL</td>
+                                                <td>NILL</td>
+                                                <td>NILL</td>
+                                            
+                                              </tr>
+                                            </tbody>
+                                          </table></div></div>
+
+                 <div style="margin: 8px;">
+                  <div class="ui checkbox">
+                    <input type="checkbox" tabindex="0" name="Order[currentStatus]" required value="Store">
+                    <label>Assign to store department</label>
+                  </div>
+        <input class="ui blue basic big button" type="submit"></input>
+    </div>
+    </form>
+</div>
+
+<script>
+  $(window).on("load",function(){
+    $("div.segment").fadeOut(1000).fadeIn(1000);
+  });
+
+
+  </script>
+
+
+<%-include("partials/footer")%>
